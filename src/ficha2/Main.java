@@ -6,22 +6,30 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		System.out.println("Introduza um número inteiro:");
-		int number = input.nextInt();
+		/*
+		 * System.out.println("Introduza um número inteiro:"); int number =
+		 * input.nextInt();
+		 * 
+		 * System.out.println("O fatorial de " + number + " é: " + factor(number));
+		 * 
+		 * System.out.println("Com recursão dá: " + factorRecursivo(number));
+		 * 
+		 * System.out.println("Introduza uma String para contar o número de vogais: ");
+		 * 
+		 * input.nextLine();
+		 * 
+		 * String stringTeste = input.nextLine();
+		 * 
+		 * System.out.println("A string tem " + numTotalVogais(stringTeste) +
+		 * " vogais.");
+		 * 
+		 * numVogais(stringTeste);
+		 */
+		System.out.println("Introduza o número de segundos que pretende converter:");
 
-		System.out.println("O fatorial de " + number + " é: " + factor(number));
+		double segundos = input.nextDouble();
 
-		System.out.println("Com recursão dá: " + factorRecursivo(number));
-
-		System.out.println("introduza uma String para contar o número de vogais: ");
-
-		input.nextLine();
-
-		String stringTeste = input.nextLine();
-
-		System.out.println("A string tem " + numTotalVogais(stringTeste) + " vogais.");
-
-		numVogais(stringTeste);
+		convertSeconds(segundos);
 
 		input.close();
 
@@ -109,6 +117,30 @@ public class Main {
 		System.out.println("i :" + compareChar(aString, 'i'));
 		System.out.println("o :" + compareChar(aString, 'o'));
 		System.out.println("u :" + compareChar(aString, 'u'));
+
+	}
+
+// 
+	public static void convertSeconds(double aSeconds) {
+
+		// falta fazer para os meses
+
+		double days = aSeconds / (24 * 3600);
+
+		aSeconds = aSeconds % (24 * 3600);
+
+		double hours = aSeconds / 3600;
+
+		aSeconds = aSeconds % 3600;
+
+		double minutes = aSeconds / 60;
+
+		aSeconds = aSeconds % 60;
+
+		double seconds = aSeconds;
+
+		System.out.println("Dias: " + (int) days + "\n" + "Horas: " + (int) hours + "\n" + "Minutos: " + (int) minutes
+				+ "\n" + "Segundos: " + (int) seconds + "\n");
 
 	}
 }
